@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #fafafa;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#container{
+    background-color: #55bbff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+#main-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#settings-container, #preview-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 25%;
+    /* background-color: rgb(0, 255, 34); */
+    padding: 2rem;
+    align-items: center;
+}
+.input-field{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    gap: 1rem;
+    font-weight: bold;
+    /* background-color: red; */
+}
+.range{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    /* background-color: blue; */
+}
+.range input[type="range"]{
+    cursor: pointer;
+}
+.reference-input{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    /* background-color: aqua; */
+}
+.reference-input input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    pointer-events: none;
+    width: 2rem;
+    border-bottom: 1px solid #fafafa;
+}
+.color-input{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.color-reference-input input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    pointer-events: none;
+    width: 13rem;
+    border-bottom: 1px solid #fafafa;
+}
+.inner-shadow-input{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  width: 1.30em;
+  height: 1.30em;
+  border: 0.15em solid #002f59;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.80em;
+  height: 0.80em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #148af2;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+#preview{
+    background-color: #fafafa;
+    height: 20vh;
+    width: 20vb;
+    border: 1px solid #666;
+}
+#rules-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+#rules-field{
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    background-color: #148af2;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#rules-field:hover{
+    background-color: #0068c2;
+}
+
+@media(max-width:1280px){
+    #settings-container, #preview-container, #container{
+        width: 100%;
+        gap: 1.5rem;
+    }
+}
+
+@media(max-width:1024px){
+    #settings-container, #preview-container{
+        width: 30rem;
+        gap: 1.5rem;
+    }
+    #settings-container, #preview-container{
+        padding: 0 1rem;
+    }
+    .input-field{
+        width: 90%;
+    }
+    #container{
+        justify-content: flex-start;
+        padding-top: 5vh;
+    }
+}
+
+@media(max-width:540px){
+    #container{
+        padding-bottom: 5rem;
+    }
+    #main-container{
+        display: flex;
+        flex-direction: column;
+    }
+    #rules-field{
+        width: 75%;
+    }
+    #rules-container h2{
+        width: 60%;
+        text-align: center;
+    }
+    #rules-container{
+        gap: 1rem;
+    }
+    #settings-container, #preview-container, #container{
+        width: 100%;
+        gap: 1.5rem;
+    }
+    #settings-container, #preview-container{
+        padding: 0.5rem 0;
+    }
+    .color-reference-input input{
+        width: 100%;
+    }
+    .reference-input input{
+        width: 1.5rem;
+    }
+    .input-field{
+        width: 95%;
+    }
+    #preview{
+        margin: 2rem;
+    }
+}
