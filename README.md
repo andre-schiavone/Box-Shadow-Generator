@@ -94,8 +94,6 @@ BoxShadowGenerator/
 - Save favorite presets
 - Dark/Light theme
 - Copy individual CSS properties
-- SCSS and Tailwind output
-- Export settings as JSON
 
 ## Author
 
