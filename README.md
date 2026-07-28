@@ -68,7 +68,11 @@ No additional dependencies or installation steps are required.
 
 ## Preview
 
-(Add screenshots or a GIF here)
+<img width="1919" height="946" alt="image" src="https://github.com/user-attachments/assets/fb081ec1-2494-44ea-b802-dd302e0dd336" />
+<img width="411" height="881" alt="image" src="https://github.com/user-attachments/assets/f41b9476-9596-4253-90fd-4051a3eb8dd6" />
+<img width="445" height="863" alt="image" src="https://github.com/user-attachments/assets/97840204-d867-4802-8411-d01364593280" />
+
+
 
 ## Project Structure
 
