@@ -58,10 +58,21 @@
     background-color: transparent;
     border: none;
     outline: none;
-    pointer-events: none;
     width: 2rem;
     border-bottom: 1px solid #fafafa;
 }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
 .color-input{
     display: flex;
     gap: 2rem;

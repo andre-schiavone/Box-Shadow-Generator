@@ -90,6 +90,11 @@ class BoxShadowGenerator {
 
         return `${r}, ${g}, ${b}`;
     }
+
+    update(){
+        this.applyRule();
+        this.showRule();
+    }
 }
 
 const boxShadow = new BoxShadowGenerator(
@@ -112,25 +117,25 @@ const boxShadow = new BoxShadowGenerator(
     mozRule
 )
 
+const inputSizeValidation = (value, min, max) => {
+    return Math.min(Math.max(Number(value), min), max);
+}
 
+const inputs = [ [horizontal, horizontalValue], [vertical, verticalValue], [blur, blurValue], [spread, spreadValue] ];
+
+inputs.forEach(([slider, output]) => {
+    slider.addEventListener("input", ()=>{
+        output.value = slider.value;
+        boxShadow.update();
+    })
+    output.addEventListener("input", ()=>{
+        output.value = inputSizeValidation(output.value, Number(slider.min), Number(slider.max))
+        slider.value = output.value;
+        boxShadow.update();
+    })
+})
 
 document.addEventListener("input", (e) => {
-    if (e.target === horizontal) {
-        horizontalValue.value = horizontal.value;
-    }
-
-    if (e.target === vertical) {
-        verticalValue.value = vertical.value;
-    }
-
-    if (e.target === blur) {
-        blurValue.value = blur.value;
-    }
-
-    if (e.target === spread) {
-        spreadValue.value = spread.value;
-    }
-
     if (e.target === color) {
         colorValue.value = boxShadow.hexToRgb(color.value);
     }
@@ -139,8 +144,12 @@ document.addEventListener("input", (e) => {
         opacityValue.value = opacity.value*100;
     }
 
-    boxShadow.applyRule();
-    boxShadow.showRule();
+    if(e.target === opacityValue) {
+        opacityValue.value = inputSizeValidation(opacityValue.value, 0, 100);
+        opacity.value = opacityValue.value/100;
+    }
+
+    boxShadow.update();
 })
 
 rulesField.addEventListener("click", () => {
@@ -148,3 +157,4 @@ rulesField.addEventListener("click", () => {
 })
 
 boxShadow.initialize();
+
